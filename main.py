@@ -18,3 +18,9 @@ else:
                   "Please be careful when using it.")
         else:
             print(model.get_info().identifier, "is already loaded.")
+            if input("Unload model? (y/N)") == "y":
+                with lms.Client() as client:
+                    model = client.llm.model()
+                    model.unload()
+
+
