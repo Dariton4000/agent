@@ -10,7 +10,7 @@ An agent that has access to Wikipedia and the crawling of defined links. This to
 
 ## Requirements
 
-- Python 3.8 or higher
+- Python 3.13 or other versions compatible with LM-Studio and Crawl4AI
 - LM-Studio
 - Crawl4AI
 
