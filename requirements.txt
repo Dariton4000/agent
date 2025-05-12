@@ -1,4 +1,3 @@
-# filepath: e:\agent\requirements.txt
 pick
 lmstudio
 requests
