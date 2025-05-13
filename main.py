@@ -106,6 +106,7 @@ def load_model():
             model = client.llm.load_new_instance(options[index], config={
                 "contextLength": 32768,
             })
+            print("Model Loaded")
             return model
     else:
         with lms.Client() as client:

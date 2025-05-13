@@ -20,11 +20,13 @@ An agent that has access to Wikipedia and the crawling of defined links. This to
 
 1. Install LM-Studio from [https://lmstudio.ai/](https://lmstudio.ai/)
 
-2. Install Crawl4AI from [https://docs.crawl4ai.com/core/installation/](https://docs.crawl4ai.com/core/installation/)
+2. Install project dependencies:
 
 ```bash
-pip install crawl4ai
+pip install -r requirements.txt
 ```
+
+3. Install Crawl4AI from [https://docs.crawl4ai.com/core/installation/](https://docs.crawl4ai.com/core/installation/)
 
 ```bash
 crawl4ai-setup
@@ -41,8 +43,6 @@ crawl4ai-setup
 ```bash
 crawl4ai-doctor
 ```
-
-3. Install project dependencies:
 
 ```bash
 pip install -r requirements.txt
