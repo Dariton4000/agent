@@ -2,6 +2,14 @@ import lmstudio as lms
 import pick
 
 def load_model():
+    """
+    Loads a language model, prompting the user to select or unload models as needed.
+    
+    If no model is loaded, prompts the user to select a downloaded LLM model and loads it with a context length of 32,768 tokens. If a model is already loaded, checks if it is trained for tool use and offers the option to unload and select a different model.
+    
+    Returns:
+        The loaded language model instance.
+    """
     if lms.list_loaded_models() == []:
         print("No models loaded")
         title = 'Please choose a model to load:'
@@ -35,6 +43,16 @@ def load_model():
 
 def does_chat_fit_in_context(model: lms.LLM, chat: lms.Chat):
     # Convert the conversation to a string using the prompt template.
+    """
+    Calculates the ratio of the model's context length to the token count of a chat conversation.
+    
+    Args:
+        model: The language model instance to evaluate against.
+        chat: The chat conversation to assess.
+    
+    Returns:
+        The ratio of the model's context window size to the number of tokens in the chat.
+    """
     formatted = model.apply_prompt_template(chat)
     # Count the number of tokens in the string.
     token_count = len(model.tokenize(formatted))

@@ -5,6 +5,13 @@ from wikipedia_tools import wikipedia_search, wikipedia
 from lmstudio import ToolFunctionDef
 
 def print_fragment(fragment, round_index=0):
+    """
+    Prints the content of a prediction fragment to standard output without a newline.
+    
+    Args:
+        fragment: An object containing a 'content' attribute to be printed.
+        round_index: Unused parameter included for interface compatibility.
+    """
     print(fragment.content, end="", flush=True)
 
 tool_crawl_link = ToolFunctionDef(
@@ -36,6 +43,11 @@ tool_get_page_info = ToolFunctionDef(
 )
 
 def main():
+    """
+    Runs the interactive command-line chat interface for the AI assistant.
+    
+    Continuously prompts the user for input, manages the chat session, and streams model responses with integrated web and Wikipedia tools. Exits on blank input or EOF.
+    """
     load_model()
     model = lms.llm()
     chat = lms.Chat("You are a task focused AI researcher")
