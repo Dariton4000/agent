@@ -6,6 +6,7 @@ import requests
 import asyncio
 from crawl4ai import AsyncWebCrawler
 from crawl4ai.async_configs import BrowserConfig, CrawlerRunConfig
+from dotenv import load_dotenv
 
 def print_fragment(fragment, round_index=0):
     # .act() supplies the round index as the second parameter
@@ -23,7 +24,7 @@ async def crawl(url):
             url=url,
             config=run_config
         )
-        return(result.markdown)  # Print clean markdown content
+        return(result.markdown)  # Return clean markdown content
 
 # Synchronous wrapper for crawl to be used in ToolFunctionDef implementation
 def crawl_sync(url: str):
