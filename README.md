@@ -85,3 +85,31 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Implement a memory and goal feature as a toolcall for the model so that context window is no longer an issue
 
 - Implement a search tool for the model to search outside of Wikipedia
+
+## OpenAI Compatibility
+
+This project now includes compatibility with OpenAI models. You can use OpenAI as a provider for interacting with AI models.
+
+### Using OpenAI as a Provider
+
+1. Install the OpenAI Python package:
+
+```bash
+pip install openai
+```
+
+2. Set your OpenAI API key as an environment variable:
+
+```bash
+export OPENAI_API_KEY='your-api-key'
+```
+
+3. Update the `main.py` script to use OpenAI models by importing the necessary functions from `openai_provider.py`.
+
+4. Run the main script:
+
+```bash
+python main.py
+```
+
+5. Interact with the agent by typing your research questions or commands.

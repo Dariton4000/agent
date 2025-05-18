@@ -2,3 +2,4 @@ pick
 lmstudio
 requests
 crawl4ai
+openai
