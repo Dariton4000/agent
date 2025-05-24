@@ -128,11 +128,6 @@ main.py                 # Main AIResearchAssistant class
 ├── Wikipedia API       # Search and content retrieval
 ├── Tool Management     # LM-Studio tool configuration
 └── Context Management  # Token usage and conversation handling
-
-test_main.py           # Comprehensive test suite
-├── Unit Tests         # Individual function testing
-├── Integration Tests  # End-to-end workflow testing
-└── Error Handling     # Edge case and error testing
 ```
 
 ## How It Works
@@ -165,23 +160,6 @@ The assistant automatically configures tools for the AI model:
 - Web page crawling tool with markdown extraction
 
 ## Development
-
-### Running Tests
-
-The project includes a comprehensive test suite:
-
-```bash
-# Run all tests with detailed output
-python run_tests.py
-
-# Run basic validation (no external dependencies)
-python validate_refactoring.py
-
-# Run specific test categories (requires pytest)
-pytest test_main.py::TestAIResearchAssistant -v  # Unit tests
-pytest test_main.py::TestIntegration -v          # Integration tests
-pytest test_main.py::TestErrorHandling -v        # Error handling
-```
 
 ### Code Quality
 
