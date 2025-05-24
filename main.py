@@ -449,6 +449,11 @@ class AIResearchAssistant:
                 return "Error: Cannot run sync crawl from within async context. Use crawl_webpage() directly."
             except RuntimeError:
                 # No running loop → safe to create one
+                try:
+                loop = asyncio.get_running_loop()
+                result = loop.run_until_complete(self.crawl_webpage(url))
+            except RuntimeError:
+                # No running loop → safe to create one
                 result = asyncio.run(self.crawl_webpage(url))
                 # Note: Context will be displayed after the full response is complete
                 return result
