@@ -118,7 +118,12 @@ class AIResearchAssistant:
         """Synchronous wrapper for crawl_webpage."""
         try:
             # Note: The cosmetic message is already shown in crawl_webpage()
-            result = asyncio.run(self.crawl_webpage(url))
+            try:
+                loop = asyncio.get_running_loop()
+                result = loop.run_until_complete(self.crawl_webpage(url))
+            except RuntimeError:
+                # No running loop → safe to create one
+                result = asyncio.run(self.crawl_webpage(url))
             # Display context usage after tool call
             self.display_context_usage()
             return result
@@ -272,8 +277,12 @@ class AIResearchAssistant:
                 
                 choices = [m.model_key for m in models]
                 # pick.pick returns (selected_option, index)
-                selected_tuple = pick.pick(choices, title)
-                selected_model = str(selected_tuple[0])  # Extract and cast the selected model key
+                if sys.stdin.isatty():
+                    selected_tuple = pick.pick(choices, title)
+                    selected_model = str(selected_tuple[0])
+                else:
+                    logger.warning("Non-interactive mode detected – selecting first model")
+                    selected_model = choices[0]  # Extract and cast the selected model key
                 # Load new model instance with the selected model_key
                 model = self.client.llm.load_new_instance(
                     selected_model,
