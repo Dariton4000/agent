@@ -31,6 +31,9 @@ env/
 ENV/
 .venv/
 .env/
+.env
+# Allow .env.example to be tracked
+!.env.example
 
 # PyInstaller
 *.manifest
@@ -99,3 +102,6 @@ desktop.ini
 # Logs
 logs/
 *.log
+
+# Session data (personal chat sessions)
+sessions/
