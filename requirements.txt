@@ -2,3 +2,7 @@ pick
 lmstudio
 requests
 crawl4ai
+python-dotenv
+pytest
+pytest-asyncio
+pytest-mock

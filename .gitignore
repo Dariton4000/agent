@@ -1,3 +1,9 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
 # Distribution / packaging
 .Python
 build/
@@ -62,6 +68,10 @@ dmypy.json
 .env
 .env.*
 
+# Log files
+logs/
+*.log
+
 # Editor and IDE configs
 .vscode/
 .idea/
@@ -84,3 +94,7 @@ desktop.ini
 *.bak
 *.swp
 *.tmp
+
+# Logs
+logs/
+*.log
