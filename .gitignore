@@ -66,7 +66,8 @@ dmypy.json
 
 # Environments and secrets
 .env
-.env.*
+# Allow .env.example to be tracked
+!.env.example
 
 # Log files
 logs/
